@@ -2,7 +2,7 @@ const menuButton = document.getElementById("menuButton");
 const sideMenu = document.getElementById("sideMenu");
 const exit = document.getElementById("exit");
 const dropdownButton = document.getElementById('dropdownButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
 menuButton.addEventListener("click", handleShow);
 exit.addEventListener("click", handleExit);

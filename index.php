@@ -1,22 +1,31 @@
+<?php 
+
+    // session_start();
+
+    // if(isset($_SESSION['user'])) {
+    //     header('Location: ./frontend/home/home.php');
+    //     return;
+    // }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./assets/css/output.css">
-    <script defer src="./assets/js/index.js"></script>
+    <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="bg-white-gray">
 
-
-
     <!-- Header -->
-    <header class="h-[70px] px-5 flex flex-row justify-between items-center lg:px-10">
+    <header class="h-[100px] px-5 flex flex-row justify-between items-center xl:px-[100px]">
         <div>
-            <img src="./assets/images/logo.png" alt="Logo">
+            <img src="./assets/images/logo.png" alt="Logo" class="xl:w-[150px]">
         </div>
         <div class="xl:hidden">
             <img src="./assets/images/menu-icon.png" alt="Menu Logo" id="menuButton">
@@ -24,18 +33,7 @@
         <div class="hidden xl:flex gap-5 items-center">
             <a href="">Home</a>
             <a href="">Search</a>
-            <div class="relative">
-                <!-- Popup Trigger -->
-                <p id="dropdownButton" class="px-4 py-2 bg-brown text-white-gray hover:cursor-pointer">
-                    Sign up
-                </p>
-
-                <!-- Popup Menu -->
-                <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden">
-                    <a href="./frontend/signup/user_signup.php" class="block px-4 py-2 text-gray-700 hover:bg-white-gray">User</a>
-                    <a href="./frontend/signup/seller_signup.php" class="block px-4 py-2 text-gray-700 hover:bg-white-gray">Seller</a>
-                </div>
-            </div>
+            <a href="./frontend/login/login.php" class="px-4 py-2 bg-brown text-white-gray hover:cursor-pointer">Login</a>
         </div>
     </header>
 
@@ -62,13 +60,19 @@
     </section>
 
     <!-- Main  -->
-    <main class="pt-5">
-        <section class="flex flex-col gap-5 px-5 pb-5">
-            <h1 class="font-Baskerville text-dark-black font-bold text-[35px]">Discover the Joy of Reading</h1>
+    <main class="pt-10">
+        <section class="xl:px-[100px] xl:flex xl:flex-row xl:mb-10 justify-between">
+            <div class="xl:flex xl:flex-col xl:w-[500px] xl:gap-5">
+                <h1 class="font-Baskerville text-dark-black font-bold xl:text-[60px]">Discover the Joy of Reading</h1>
 
-            <p class="font-Outfit text-dark-gray font-medium text-[18px]">Immerse Yourself in a World of Literature: Explore Our Vast Selection of Books, from Bestsellers to Rare Finds</p>
+                <p class="font-Outfit text-dark-gray font-medium text-[18px]">Immerse Yourself in a World of Literature: Explore Our Vast Selection of Books, from Bestsellers to Rare Finds</p>
 
-            <a href="" class="font-Outfit bg-brown flex justify-center items-center h-[40px] text-white-gray text-[16px]">Shop Now</a>
+                <a href="" class="font-Outfit bg-brown flex justify-center items-center h-[40px] xl:w-[100px] text-white-gray text-[16px]">Shop Now</a>
+            </div>
+            
+            <div>
+                <img src="./assets/images/image1.png" alt="">
+            </div>
         </section>
 
         <section class="flex flex-col gap-5 bg-brown text-white-gray text-center items-center py-5">
