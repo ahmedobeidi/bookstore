@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.php",
   "scripts": {
-    "build:css": "tailwindcss build -i ./assets/css/style.css -o ./assets/css/output.css --watch"
+    "build:css": "tailwindcss build -i ./public/assets/styles/style.css -o ./public/assets/styles/output.css --watch"
   },
   "keywords": [],
   "author": "",

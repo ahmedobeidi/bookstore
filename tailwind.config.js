@@ -8,8 +8,7 @@ module.exports = {
         Outfit: "Outfit",
       },
       colors: {
-        white: "#ffffff",
-        "white-gray": "#FCF6EC",
+        "milk": "#FFEBD7",
         "dark-black": "#0A0A0B",
         "dark-gray": "#999593",
         "off-gray": "#8E8989",
@@ -18,6 +17,7 @@ module.exports = {
         red: "#bf0000",
       },
       backgroundImage: {
+        formBackground: "url('../images/formBackground.jpg')",
         section1: "url('../images/section1.jpg')",
       },
     },
