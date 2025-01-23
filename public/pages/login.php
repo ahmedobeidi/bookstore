@@ -1,5 +1,10 @@
 <?php 
-  require_once '../../backend/login/get_role.php';
+
+  require_once '../../utils/autoloader.php';
+
+  $roleManager = new RoleManager();
+  $roles = $roleManager->unsetAdminFromRoles();
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +52,7 @@
           <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg hidden">
 
             <?php foreach($roles as $role) { ?>
-              <a href="./<?= $role['role'] ?>_signup.php?role_id=<?= $role['id'] ?>" class="block px-4 py-2 hover:bg-milk"><?= $role["role"] ?></a>
+              <a href="./<?= $role->getRole() ?>_signup.php?role_id=<?= $role->getId(); ?>" class="block px-4 py-2 hover:bg-milk"><?= $role->getRole(); ?></a>
             <?php } ?>
 
           </div>
