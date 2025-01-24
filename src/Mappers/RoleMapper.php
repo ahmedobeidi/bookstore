@@ -12,11 +12,9 @@ class RoleMapper {
 
     public static function mapToArray(Role $role)
     {
-        // return [
-        //     'name' => $hero->getName(),
-        //     'image' => $hero->getImage(),
-        //     'health' => $hero->getHealth(),
-        //     'healthMax' => $hero->getHealthMax(),
-        // ];
+        return [
+            'id' => $role->getId(),
+            'role' => $role->getRole(),
+        ];
     }
 }

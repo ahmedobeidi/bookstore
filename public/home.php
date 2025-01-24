@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../assets/styles/output.css">
+    <link rel="stylesheet" href="./assets/styles/output.css">
     <script defer src="./assets/js/main.js"></script>
 </head>
 
@@ -14,7 +18,7 @@
     <!-- Header -->
     <header class="h-[100px] px-5 flex flex-row justify-between items-center xl:px-[100px]">
         <div>
-            <img src="../assets/imgs/logo.png" alt="Logo" class="xl:w-[150px]">
+            <img src="./assets/images/logo.png" alt="Logo" class="xl:w-[150px]">
         </div>
         <div class="xl:hidden">
             <img src="./assets/images/menu-icon.png" alt="Menu Logo" id="menuButton">
@@ -22,7 +26,14 @@
         <div class="hidden xl:flex gap-5 items-center">
             <a href="">Home</a>
             <a href="">Search</a>
+            <?php if(!isset($_SESSION['user'])): ?>
             <a href="./login.php" class="px-4 py-2 bg-brown text-milk hover:cursor-pointer">Login</a>
+            <?php else: ?>
+            <a href="./profile.php">profile</a>
+            <form action="../process/handleLogout.php" method="POST">
+                <input type="submit" value="Logout" class="px-4 py-2 bg-brown text-milk hover:cursor-pointer">
+            </form>
+            <?php endif ?>
         </div>
     </header>
 

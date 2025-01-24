@@ -1,6 +1,6 @@
 <?php 
 
-  require_once '../../utils/autoloader.php';
+  require_once '../utils/autoloader.php';
 
   $roleManager = new RoleManager();
   $roles = $roleManager->unsetAdminFromRoles();
@@ -14,8 +14,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="../assets/styles/output.css">
-  <script defer src="../assets/scripts/signup_popup.js"></script>
+  <link rel="stylesheet" href="./assets/styles/output.css">
+  <script defer src="./assets/scripts/signup_popup.js"></script>
 </head>
 
 <body class="bg-milk min-h-screen flex items-center justify-center">
@@ -23,7 +23,7 @@
     <form action="../../backend/login/process_login.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
       <section class="flex flex-col items-center gap-6">
         <!-- Logo -->
-        <a href="../../index.php"><img src="../assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>
+        <a href="../index.php"><img src="./assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>
 
         <input
           type="email"
@@ -52,7 +52,7 @@
           <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg hidden">
 
             <?php foreach($roles as $role) { ?>
-              <a href="./<?= $role->getRole() ?>_signup.php?role_id=<?= $role->getId(); ?>" class="block px-4 py-2 hover:bg-milk"><?= $role->getRole(); ?></a>
+              <a href="./<?= $role->getRole() ?>Signup.php?role_id=<?= $role->getId(); ?>" class="block px-4 py-2 hover:bg-milk"><?= $role->getRole(); ?></a>
             <?php } ?>
 
           </div>

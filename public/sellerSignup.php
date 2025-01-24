@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="../assets/styles/output.css">
+    <link rel="stylesheet" href="./assets/styles/output.css">
 </head>
 <body class="bg-milk min-h-screen flex items-center justify-center">
   <main class="flex flex-col items-center w-full max-w-md px-6 sm:px-8 lg:px-12">
     <form action="../../backend/signup/process_seller_signup.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
       <section class="flex flex-col items-center gap-6">
         <!-- Logo -->
-        <a href="../../index.php"><img src="../assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>
+        <a href="../index.php"><img src="./assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>
 
         <?php if(isset($_SESSION['error'])) {?>
           <p class="text-red"><?= $_SESSION['error'] ?></p>

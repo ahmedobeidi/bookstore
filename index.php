@@ -1,5 +1,5 @@
 <?php 
 
-header("Location: ./public/pages/home.php");
+header("Location: ./public/home.php");
 exit();
 
