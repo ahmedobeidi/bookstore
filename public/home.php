@@ -30,7 +30,7 @@
             <a href="./login.php" class="px-4 py-2 bg-brown text-milk hover:cursor-pointer">Login</a>
             <?php else: ?>
             <a href="./profile.php">profile</a>
-            <form action="../process/handleLogout.php" method="POST">
+            <form action="../process/processLogout.php" method="POST">
                 <input type="submit" value="Logout" class="px-4 py-2 bg-brown text-milk hover:cursor-pointer">
             </form>
             <?php endif ?>

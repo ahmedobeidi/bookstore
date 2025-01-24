@@ -1,5 +1,9 @@
 <?php
-  session_start();
+    session_start();
+
+    if (isset($_SESSION['user'])) {
+        header("Location: ./home.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +16,7 @@
 </head>
 <body class="bg-milk min-h-screen flex items-center justify-center">
   <main class="flex flex-col items-center w-full max-w-md px-6 sm:px-8 lg:px-12">
-    <form action="../../backend/signup/process_seller_signup.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
+    <form action="../process/processSignup.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
       <section class="flex flex-col items-center gap-6">
         <!-- Logo -->
         <a href="../index.php"><img src="./assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>
@@ -80,7 +84,7 @@
 
         <p class="">Alerady have an account: <a href="./login.php" class="text-orange-400 hover:cursor-pointer">Login</a></p>
         
-        <input type="text" name="role" value="<?= $_GET['role_id'] ?>" class="hidden">
+        <input type="text" name="role_id" value="<?= $_GET['role_id'] ?>" class="hidden">
 
       </section>
     </form>

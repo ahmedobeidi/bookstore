@@ -10,8 +10,9 @@ class User {
     private string $pass;
     private int $role_id;
 
-    public function __construct(string $firstName, string $lastName,  string $phone, string $email, string $pass, int $role_id)
+    public function __construct(int $id, string $firstName, string $lastName,  string $phone, string $email, string $pass, int $role_id)
     {
+        $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->phone = $phone;

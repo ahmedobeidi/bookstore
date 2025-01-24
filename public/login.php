@@ -1,9 +1,15 @@
-<?php 
+<?php
 
-  require_once '../utils/autoloader.php';
+    session_start();
 
-  $roleManager = new RoleManager();
-  $roles = $roleManager->unsetAdminFromRoles();
+    if (isset($_SESSION['user'])) {
+        header("Location: ./home.php");
+    }
+
+    require_once '../utils/autoloader.php';
+
+    $roleManager = new RoleManager();
+    $roles = $roleManager->unsetAdminFromRoles();
 
 ?>
 

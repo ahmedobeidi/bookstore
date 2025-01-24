@@ -40,6 +40,7 @@ final class UserRepository extends AbstractRepository {
 
     public function create(User $user) 
     {
+        $hashedPassword = password_hash($user->getPass(), PASSWORD_DEFAULT);
         $sql = "INSERT INTO `user` (`firstName`, `lastName`, `phone`, `email`, `pass`, `role_id`) VALUES (:firstName, :lastName, :phone, :email, :pass, :role_id)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
@@ -47,7 +48,7 @@ final class UserRepository extends AbstractRepository {
             ':lastName' => $user->getLastName(),
             ':phone' => $user->getPhone(),
             ':email' => $user->getEmail(),
-            ':pass' => $user->getPass(),
+            ':pass' => $hashedPassword,
             ':role_id' => $user->getRole_id(),
         ]);
     }
