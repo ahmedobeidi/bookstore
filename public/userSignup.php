@@ -5,6 +5,8 @@
         header("Location: ./home.php");
         exit();
     }
+
+    $_SESSION['role'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +74,6 @@
         >
 
         <p class="">Alerady have an account: <a href="./login.php" class="text-orange-400 hover:cursor-pointer">Login</a></p>
-        
-        <input type="text" name="role_id" value="<?= $_GET['role_id'] ?>" class="hidden">
         
       </div>
     </form>

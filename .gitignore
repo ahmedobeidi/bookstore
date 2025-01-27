@@ -4,5 +4,4 @@ node_modules
 public/assets/images/books
 
 src/Entities/Database.php
-
 ./src/Entities/Database.php

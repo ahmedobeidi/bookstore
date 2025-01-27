@@ -2,7 +2,7 @@
 
 class ValidatorService
 {
-    private $strategies = [];
+    private array $strategies = [];
 
     public function addStrategy(string $field, ValidationContract $strategy)
     {
