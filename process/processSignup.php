@@ -18,8 +18,8 @@ $validator->addStrategy('role_id', new RequiredValidator());
 $validator->addStrategy('firstName', new StringValidator(30));
 $validator->addStrategy('lastName', new StringValidator(30));
 $validator->addStrategy('phone', new StringValidator(30));
-$validator->addStrategy('email', new StringValidator(30));
-$validator->addStrategy('pass', new StringValidator(30));
+$validator->addStrategy('email', new StringValidator(255));
+$validator->addStrategy('pass', new StringValidator(255));
 $validator->addStrategy('role_id', new IntegerValidator(30));
 
 $validator->addStrategy('email', new EmailValidator());
@@ -72,6 +72,8 @@ if ($user->getRole_id() === 2) {
     header("Location: ./processSellerSignup.php");
     exit();
 }
+
+unset($_SESSION['postData']);
 
 header("Location: ../index.php");
 exit();

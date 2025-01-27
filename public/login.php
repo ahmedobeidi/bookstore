@@ -4,6 +4,7 @@
 
     if (isset($_SESSION['user'])) {
         header("Location: ./home.php");
+        exit();
     }
 
     require_once '../utils/autoloader.php';
@@ -26,7 +27,12 @@
 
 <body class="bg-milk min-h-screen flex items-center justify-center">
   <main class="flex flex-col items-center w-full max-w-md px-6 sm:px-8 lg:px-12">
-    <form action="../../backend/login/process_login.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
+
+    <?php if (isset($_GET['error'])): ?>
+    <p class="text-red mb-10"><?= $_GET['error'] ?> 
+    <?php endif ?> 
+
+    <form action="../process/processLogin.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
       <section class="flex flex-col items-center gap-6">
         <!-- Logo -->
         <a href="../index.php"><img src="./assets/images/logo.png" alt="Logo" class="w-32 sm:w-40"></a>

@@ -1,17 +1,26 @@
 <?php 
 
 final class Seller {
-
+    
     private int $id;
     private int $user_id;
     private string $companyName;
     private string $companyAddress;
     
-    public function __construct(int $user_id, string $companyName = "", string $companyAddress = "")
+    public function __construct(int $id, int $user_id, string $companyName, string $companyAddress)
     {
+        $this->id = $id;
         $this->user_id = $user_id;
         $this->companyName = $companyName;
         $this->companyAddress = $companyAddress;
+    }
+    
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -21,7 +30,7 @@ final class Seller {
     {
         return $this->user_id;
     }
-
+    
     /**
      * Get the value of companyName
      */ 
@@ -37,4 +46,6 @@ final class Seller {
     {
         return $this->companyAddress;
     }
+    
+    
 }

@@ -12,13 +12,13 @@ final class UserRepository extends AbstractRepository {
         $sql = "SELECT * FROM `user` WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':email' => $email]);
-        $userColumn = $stmt->fetch(PDO::FETCH_ASSOC);
+        $userRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if(!$userColumn) {
+        if(!$userRow) {
             return null;
         }
 
-        return UserMapper::mapToObject($userColumn);
+        return UserMapper::mapToObject($userRow);
     }
 
     public function findAll(): array 

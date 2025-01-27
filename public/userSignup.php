@@ -3,6 +3,7 @@
 
     if (isset($_SESSION['user'])) {
         header("Location: ./home.php");
+        exit();
     }
 ?>
 
@@ -18,6 +19,10 @@
 
 <body class="bg-milk min-h-screen flex items-center justify-center">
   <main class="flex flex-col items-center w-full max-w-md px-6 sm:px-8 lg:px-12">
+
+  <?php if (isset($_GET['error'])): ?>
+  <p class="text-red mb-10"><?= $_GET['error'] ?> 
+  <?php endif ?> 
 
     <form action="../process/processSignup.php" method="POST" class="w-full bg-formBackground p-6 rounded-lg shadow-lg">
       <div class="flex flex-col items-center gap-6">
