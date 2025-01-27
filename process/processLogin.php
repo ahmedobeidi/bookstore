@@ -43,5 +43,10 @@ if ($user && !password_verify($sanitizedData['pass'], $user->getPass())) {
 
 session_start();
 $_SESSION['user'] = $user;
+
+if ($user->getRole_id() === 2) {
+    $sellerRepository = new SellerRepository(); 
+    $_SESSION['seller'] = $sellerRepository->findByUser_id($user->getId());
+}
 header("Location: ../public/home.php");
 exit();

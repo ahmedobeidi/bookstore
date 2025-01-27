@@ -1,4 +1,5 @@
 <?php
+require_once '../utils/autoloader.php';
 
 session_start();
 
@@ -20,8 +21,14 @@ $user = $_SESSION['user'];
 </head>
 <body>
 
-<a href="./profile.php">Profile</a> <br>
+<a href="./home.php">Home</a> <br>
+
+<?php if($user->getRole_id() === 2): ?>
 <a href="./addBook.php">Add Book</a>
+<?php endif ?>
+
+<h1>Profile Page</h1>
+
 
 </body>
 </html>
