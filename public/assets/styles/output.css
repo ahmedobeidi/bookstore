@@ -677,6 +677,14 @@ video {
   height: 100%;
 }
 
+.h-\[\]{
+  height: ;
+}
+
+.h-\[300px\]{
+  height: 300px;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -811,6 +819,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-formBackground{
   background-image: url('../images/formBackground.jpg');
 }
@@ -851,6 +864,16 @@ video {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pt-10{
@@ -1035,6 +1058,14 @@ video {
     width: 500px;
   }
 
+  .xl\:w-\[\]{
+    width: ;
+  }
+
+  .xl\:w-\[800px\]{
+    width: 800px;
+  }
+
   .xl\:flex-row{
     flex-direction: row;
   }
@@ -1043,13 +1074,31 @@ video {
     flex-direction: column;
   }
 
+  .xl\:justify-center{
+    justify-content: center;
+  }
+
   .xl\:gap-5{
     gap: 1.25rem;
+  }
+
+  .xl\:bg-milk{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 235 215 / var(--tw-bg-opacity, 1));
+  }
+
+  .xl\:p-\[200px\]{
+    padding: 200px;
   }
 
   .xl\:px-\[100px\]{
     padding-left: 100px;
     padding-right: 100px;
+  }
+
+  .xl\:px-\[200px\]{
+    padding-left: 200px;
+    padding-right: 200px;
   }
 
   .xl\:text-\[60px\]{

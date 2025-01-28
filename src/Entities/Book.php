@@ -4,20 +4,20 @@ final class Book {
 
     private int $id;
     private string $title;
+    private int $price;
     private string $coverPhoto;
     private string $description;
-    private int $price;
     private int $seller_id;
     private int $status_id;
 
-    public function __construct(int $id, string $title, string $coverPhoto, string $description, int $price, int $seller_id, int $status_id)
+    public function __construct(int $id, string $title, string $coverPhoto, int $price, int $seller_id, string $description, int $status_id = 0)
     {
         $this->id = $id;
         $this->title = $title;
         $this->coverPhoto = $coverPhoto;
-        $this->description = $description;
         $this->price = $price;
         $this->seller_id = $seller_id;
+        $this->description = $description;
         $this->status_id = $status_id;
     }
 

@@ -8,6 +8,12 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+if (isset($_SESSION['seller'])) {
+    $seller = $_SESSION['seller'];
+    $bookRepo = new BookRepository();
+    $books = $bookRepo->findAllBookBySellerId($seller->getId());
+}
+
 $user = $_SESSION['user'];
 
 ?>
@@ -29,6 +35,14 @@ $user = $_SESSION['user'];
 
 <h1>Profile Page</h1>
 
+<?php if($seller): ?>
+    <?php foreach($books as $book): ?>
+        <div>
+        <h2><?= htmlspecialchars($book->getTitle()); ?></h2>
+        <img src="<?= htmlspecialchars($book->getCoverPhoto()); ?>" alt="">
+        </div>
+    <?php endforeach; ?>  
+<?php endif; ?>    
 
 </body>
 </html>

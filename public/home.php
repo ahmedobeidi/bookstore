@@ -13,10 +13,10 @@
     <script defer src="./assets/js/main.js"></script>
 </head>
 
-<body class="bg-milk">
+<body>
 
     <!-- Header -->
-    <header class="h-[100px] px-5 flex flex-row justify-between items-center xl:px-[100px]">
+    <header class="bg-milk h-[100px] px-5 flex flex-row justify-between items-center xl:px-[100px]">
         <div>
             <img src="./assets/images/logo.png" alt="Logo" class="xl:w-[150px]">
         </div>
@@ -60,8 +60,18 @@
     </section>
 
     <!-- Main  -->
-    <main class="pt-10">
-        <section class="xl:px-[100px] xl:flex xl:flex-row xl:mb-10 justify-between">
+    <main>
+        <section class="py-20 xl:bg-milk xl:flex xl:justify-center">
+                <div class="xl:flex xl:flex-col xl:w-[500px] gap-4">
+                    <h1 class="font-Baskerville text-dark-black font-bold xl:text-[60px]">Discover the Joy of Reading</h1>
+                    <p class="font-Outfit text-dark-gray font-medium text-[18px]">Immerse Yourself in a World of Literature: Explore Our Vast Selection of Books, from Bestsellers to Rare Finds</p>
+                    <a href="" class="font-Outfit bg-brown flex justify-center items-center h-[40px] xl:w-[100px] text-milk text-[16px]">Shop Now</a>
+                </div>
+                <div>
+                <img src="./assets/images/books.png" alt="">
+            </div>
+        </section>        
+        <!-- <section class="xl:w-[800px] xl:flex xl:flex-row xl:justify-center bg-black xl:mb-10 justify-between">
             <div class="xl:flex xl:flex-col xl:w-[500px] xl:gap-5">
                 <h1 class="font-Baskerville text-dark-black font-bold xl:text-[60px]">Discover the Joy of Reading</h1>
 
@@ -71,9 +81,9 @@
             </div>
             
             <div>
-                <img src="./assets/images/image1.png" alt="">
+                <img src="./assets/images/books.png" alt="">
             </div>
-        </section>
+        </section> -->
 
         <section class="flex flex-col gap-5 bg-brown text-milk text-center items-center py-5">
             <h2 class="font-Baskerville text-[32px] leading-9">Elevate Your Reading Experience</h2>

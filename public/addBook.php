@@ -9,8 +9,6 @@ if (!isset($_SESSION['seller'])) {
     exit();
 }
 
-$seller = $_SESSION['seller'];
-
 ?>
 
 <!DOCTYPE html>
@@ -67,15 +65,6 @@ $seller = $_SESSION['seller'];
     >
 
     <br><br>
-
-    <input 
-        type="text" 
-        name="seller" 
-        accept="image/*" 
-        class="hidden"
-        value="<?= $seller->getId() ?>"
-        required
-    >
 
     <input 
         type="submit" 

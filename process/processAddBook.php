@@ -2,42 +2,48 @@
 
 require_once '../utils/autoloader.php';
 
-// var_dump($_POST);
-// var_dump($_FILES);
-// die();
+session_start();
+
+$postValidator = new ValidatorService();
+
+$postValidator->checkMethods("POST");
+
+if (!isset($_SESSION['seller'])) {
+    header("Location: ./home.php");
+    exit();
+}
 
 $target_dir = "../public/assets/images/books/";
 
 if (!is_dir($target_dir)) {
     mkdir($target_dir, 0777, true);
 }
-
-
-$validator = new ValidatorService();
-
-$validator->checkMethods("POST");
-
 // TODO Finish POST validation
 
-$validator->addStrategy('title', new RequiredValidator());
-$validator->addStrategy('description', new RequiredValidator());
-$validator->addStrategy('price', new RequiredValidator());
+$postValidator->addStrategy('title', new RequiredValidator());
+$postValidator->addStrategy('description', new RequiredValidator());
+$postValidator->addStrategy('price', new RequiredValidator());
 
-$validator->addStrategy('title', new StringValidator(255));
-$validator->addStrategy('description', new StringValidator(255));
-$validator->addStrategy('price', new IntegerValidator(10000));
+$postValidator->addStrategy('title', new StringValidator(255));
+$postValidator->addStrategy('description', new StringValidator(255));
+$postValidator->addStrategy('price', new IntegerValidator(10000));
 
-if (!$validator->validate($_POST)) {
-    header('../public/addBook.php');
+if (!$postValidator->validate($_POST)) {
+    header('Location: ../public/addBook.php');
     exit;
 }
 
-$validator->addStrategy('image', new ImageValidator());
+$fileValidator = new ValidatorService();
 
-if (!$validator->validate($_FILES)) {
-    header('../public/addBook.php');
+// $fileValidator->addStrategy('image', new RequiredValidator());
+$fileValidator->addStrategy('image', new ImageValidator());
+
+
+if (!$fileValidator->validate($_FILES)) {
+    header('Location: ../public/addBook.php');
     exit;
 }
+
 
 $uniqueName = time() . "-" . uniqid() . "-" . basename($_FILES["image"]["name"]);
 
@@ -49,7 +55,12 @@ if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
 }
 
 // Create Object Book, then insert to database
-$sanitizedData = $validator->sanitize($_POST);
+$sanitizedData = $postValidator->sanitize($_POST);
 
+$book = new Book(0, $sanitizedData['title'], $target_file, $sanitizedData['price'], $_SESSION['seller']->getId(), $sanitizedData['description']);
 
-die();
+$bookRepo = new BookRepository();
+$bookRepo->create($book);
+
+header("Location: ../public/profile.php");
+exit();
